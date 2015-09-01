@@ -1,5 +1,7 @@
 # Watir::Device
 
+[![Gem Version](https://badge.fury.io/rb/watir-device.svg)](http://badge.fury.io/rb/watir-device)
+
 Automate Chrome Developer Tools' device emulation with watir-webdriver.
 
 ![screenshot](screenshot.png)
