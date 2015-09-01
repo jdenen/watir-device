@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Johnson Denen"]
   spec.email         = ["johnson.denen@gmail.com"]
 
-  spec.summary       = %q{Plugin to automate Chrome device emulation with watir-webdriver}
-  spec.description   = %q{Plugin to automate Chrome device emulation with watir-webdriver}
+  spec.summary       = %q{Automate Chrome Developer Tools' device emulation with watir-webdriver}
+  spec.description   = %q{Automate Chrome Developer Tools' device emulation with watir-webdriver}
   spec.homepage      = "https://github.com/jdenen/watir-device"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
