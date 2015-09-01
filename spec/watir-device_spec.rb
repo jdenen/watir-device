@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Watir do
+describe Watir::WatirDevice do
   it 'has a version number' do
-    expect(Watir::VERSION).not_to be nil
+    expect(subject::VERSION).not_to be nil
   end
 end

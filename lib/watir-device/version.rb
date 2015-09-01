@@ -1,5 +1,5 @@
 module Watir
-  module Device
+  module WatirDevice
     VERSION = "0.1.0"
   end
 end

@@ -5,7 +5,7 @@ require 'watir-device/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "watir-device"
-  spec.version       = Watir::Device::VERSION
+  spec.version       = Watir::WatirDevice::VERSION
   spec.authors       = ["Johnson Denen"]
   spec.email         = ["johnson.denen@gmail.com"]
 
