@@ -1,8 +1,8 @@
 # Watir::Device
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/watir/device`. To experiment with that code, run `bin/console` for an interactive prompt.
+Automate Chrome Developer Tools' device emulation with watir-webdriver.
 
-TODO: Delete this and the text above, and describe your gem
+![screenshot](screenshot.png)
 
 ## Installation
 
@@ -22,13 +22,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Instantiate an emulated device much like you would a `Watir::Browser` object. Just pass it a valid device string:
 
-## Development
+```ruby
+require 'watir-device'
+device = Watir::Device.new "Samsung Galaxy Note 3"
+device.goto "www.google.com"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+require 'watir-device'
+device = Watir::Device.start "www.google.com", "Samsung Galaxy Note 3"
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+#### Methods
+
+All methods you normally use with `Watir::Browser` are available to your `Watir::Device` object. The `Watir::Browser` object itself is available via `Watir::Device#browser`, though you shouldn't need to access it.
+
+```ruby
+device = Watir::Device.new "Samsung Galaxy Note 3"
+device.browser
+#=> <Watir::Browser:0x...>
+```
 
 ## Contributing
 
