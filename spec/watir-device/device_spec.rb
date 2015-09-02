@@ -64,4 +64,23 @@ describe Watir::Device do
       Watir::Device.start "foobar.com", "Test"
     end
   end
+
+  describe "#inspect" do
+    context "when browser has not been closed" do
+      it "returns a String representation of the instance" do
+        expect(browser).to receive(:url).and_return('http://www.foo.com')
+        inspection = device.inspect
+        expect(inspection).to match(/Watir::Device/)
+        expect(inspection).to match(/device=Foo Bar/)
+        expect(inspection).to match(/url=http:\/\/www.foo.com/)
+      end
+    end
+
+    context "when browser has been closed" do
+      it "returns a String ending in CLOSED" do
+        expect(browser).to receive(:url).and_raise(StandardError)
+        expect(device.inspect).to match(/CLOSED>/)
+      end
+    end
+  end
 end

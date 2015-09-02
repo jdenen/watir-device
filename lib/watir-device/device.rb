@@ -49,6 +49,16 @@ module Watir
       device_name
     end
 
+    #
+    # Closed instances will return string ending in CLOSED.
+    #
+    # @return [String]
+    # @see Object#inspect
+    #
+    def inspect
+      '<#%s:0x%x device=%s url=%s>' % [self.class, hash*2, device, browser.url] rescue '<#%s:0x%x device=%s CLOSED>' % [self.class, hash*2, device]
+    end
+
     # Build a WebDriver to emulate the device.
     # @api private    
     def device_driver name
