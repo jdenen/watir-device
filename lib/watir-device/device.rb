@@ -35,7 +35,11 @@ module Watir
     # @return [Watir::Device]
     #
     def initialize device_name, *args
-      @driver = device_driver(device_name)
+      begin
+        @driver = device_driver(device_name)
+      rescue Selenium::WebDriver::Error::UnknownError => e
+        raise DeviceError, "Invalid device name: '#{device_name}'"
+      end
       @device_name = device_name
       @browser = Watir::Browser.new driver
     end

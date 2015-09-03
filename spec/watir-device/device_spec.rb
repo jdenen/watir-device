@@ -26,7 +26,7 @@ describe Watir::Device do
     expect(browser).to receive(:goto).with("foobar.com")
     device.goto "foobar.com"
   end
-    
+      
   describe "#device" do
     it "returns a String" do
       expect(device.device).to be_a String
